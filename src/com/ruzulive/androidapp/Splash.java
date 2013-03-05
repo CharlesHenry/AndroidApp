@@ -16,7 +16,7 @@ public class Splash extends Activity {
 		Thread timer= new Thread() {
 			public void run(){
 				try{
-					sleep(5000);
+					sleep(3000);
 				} catch(InterruptedException e){
 					e.printStackTrace();
 				} finally {
@@ -26,6 +26,14 @@ public class Splash extends Activity {
 			}
 		};
 		timer.start();
+	}
+
+	@Override
+	//Method is called when another activity is started
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish(); //Kills splash screen
 	}
 
 }
