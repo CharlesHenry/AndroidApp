@@ -2,15 +2,21 @@ package com.ruzulive.androidapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 public class Splash extends Activity {
-
+	
+	MediaPlayer splashSound;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash); //Sets content page to splash layout
+		
+		splashSound = MediaPlayer.create(Splash.this, R.raw.splash_sound);
+		splashSound.start();
 		
 		//Used as a timer for the Splash screen
 		Thread timer= new Thread() {
@@ -33,6 +39,7 @@ public class Splash extends Activity {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+		splashSound.release(); //Stop sound
 		finish(); //Kills splash screen
 	}
 
