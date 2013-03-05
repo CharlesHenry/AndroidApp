@@ -1,6 +1,7 @@
 package com.ruzulive.androidapp;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -8,7 +9,7 @@ import android.widget.ListView;
 
 public class Menu extends ListActivity{
 
-	String classes[] = {"MainActivity", "Example1", "Example2", "Example3", "Example4"};
+	String classes[] = {"MainActivity", "MenuItem1", "MenuItem2", "MenuItem3", "MenuItem4"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,15 @@ public class Menu extends ListActivity{
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
+		
+		String myString = classes[position]; //String = whichever list item was clicked
+		//Starting an activity
+		try{
+			Class mainAct = Class.forName("com.ruzulive.androidapp."+ myString);
+			Intent mainActIntent = new Intent(Menu.this, mainAct);
+			startActivity(mainActIntent);
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
-
-	
-
 }

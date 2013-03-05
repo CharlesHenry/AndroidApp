@@ -26,7 +26,7 @@ public class Splash extends Activity {
 				} catch(InterruptedException e){
 					e.printStackTrace();
 				} finally {
-					Intent mainAct = new Intent("com.ruzulive.androidapp.MAINACT"); //link to intent in AndroidManifest.xml
+					Intent mainAct = new Intent("com.ruzulive.androidapp.MENU"); //link to intent in AndroidManifest.xml
 					startActivity(mainAct);
 				}
 			}
