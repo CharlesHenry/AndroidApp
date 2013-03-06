@@ -40,14 +40,14 @@ public class Email extends Activity implements View.OnClickListener {
 		convertEditTextVarsToStrings();
 		String emailAddress[] = { emailAdd };
 		String message = "Well hello "
-				+ name
+				+ name + "."
 				+ " I just wanted to say "
 				+ beginning
 				+ ".  Not only that but I hate when you "
 				+ stupidAction
 				+ ", that just really makes me crazy.  I just want to make you "
 				+ hatefulAct
-				+ ".  Well, thats all I wanted to chit-chatter about, oh and"
+				+ ".  Well, thats all I wanted to chit-chatter about, oh and "
 				+ out
 				+ ".  Oh also if you get bored you should jump off a cliff!"
 				+ '\n' + "PS. I'm lovely...    ";
