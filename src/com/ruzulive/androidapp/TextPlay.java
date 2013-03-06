@@ -15,10 +15,10 @@ import android.widget.ToggleButton;
 //class implements View.OnClickListener for button actions using a switch
 public class TextPlay extends Activity{
 
-	//Button bCheckCommand;
-	//ToggleButton tbPassword;
-	//EditText input;
-	//TextView display;
+	Button bCheckCommand;
+	ToggleButton tbPassword;
+	EditText input;
+	TextView display;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,7 @@ public class TextPlay extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.text);
 		
-		Button bCheckCommand = (Button) findViewById(R.id.bResults);
-		final ToggleButton tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
-		final EditText input = (EditText) findViewById(R.id.etCommands);
-		final TextView display = (TextView) findViewById(R.id.tvResults);
+		linkObjects();
 
 		tbPassword.setOnClickListener(new View.OnClickListener() {
 			
@@ -83,6 +80,14 @@ public class TextPlay extends Activity{
 				}
 			}
 		});
+	}
+
+	private void linkObjects() {
+		// TODO Auto-generated method stub
+		bCheckCommand = (Button) findViewById(R.id.bResults);
+		tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
+		input = (EditText) findViewById(R.id.etCommands);
+		display = (TextView) findViewById(R.id.tvResults);
 	}
 
 }
