@@ -13,12 +13,12 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 //class implements View.OnClickListener for button actions using a switch
-public class TextPlay extends Activity implements View.OnClickListener{
+public class TextPlay extends Activity{
 
-	Button bCheckCommand;
-	ToggleButton tbPassword;
-	EditText input;
-	TextView display;
+	//Button bCheckCommand;
+	//ToggleButton tbPassword;
+	//EditText input;
+	//TextView display;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,26 +26,28 @@ public class TextPlay extends Activity implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.text);
 		
-		linkObjects();
-		tbPassword.setOnClickListener(TextPlay.this);
-		bCheckCommand.setOnClickListener(TextPlay.this);
-	}
-
-	private void linkObjects() {
-		// TODO Auto-generated method stub
 		Button bCheckCommand = (Button) findViewById(R.id.bResults);
-		ToggleButton tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
-		EditText input = (EditText) findViewById(R.id.etCommands);
-		TextView display = (TextView) findViewById(R.id.tvResults);
-	}
+		final ToggleButton tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
+		final EditText input = (EditText) findViewById(R.id.etCommands);
+		final TextView display = (TextView) findViewById(R.id.tvResults);
 
-	//setting up button presses
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		//get id of button pressed
-		/*switch(v.getId()){ 
-			case R.id.bResults:
+		tbPassword.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(tbPassword.isChecked()){
+					input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+				}else{
+					input.setInputType(InputType.TYPE_CLASS_TEXT);
+				}
+			}
+		});
+		bCheckCommand.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				String check = input.getText().toString(); //get text from 'input'
 				display.setText(check);
 				if(check.contentEquals("left")){
@@ -79,16 +81,8 @@ public class TextPlay extends Activity implements View.OnClickListener{
 					display.setGravity(Gravity.CENTER);
 					display.setTextColor(Color.BLACK);
 				}
-			break;
-		case R.id.tbPassword:
-				if(tbPassword.isChecked()){
-					input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-				}else{
-					input.setInputType(InputType.TYPE_CLASS_TEXT);
-				}
-			break;
-		}*/
+			}
+		});
 	}
-	
 
 }
