@@ -1,11 +1,13 @@
 package com.ruzulive.androidapp;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -28,6 +30,10 @@ public class Camera extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.photo);
 		setUpReferences();
+		
+		//Set bmp default value to an image to prevent errors
+		InputStream is = getResources().openRawResource(R.drawable.ic_launcher); //set InputStream to an image file
+		bmp = BitmapFactory.decodeStream(is); //setup bitmap to value
 	}
 	
 	public void setUpReferences(){
