@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ruzulive.androidapp.MainActivity"
+            android:name="com.ruzulive.androidapp.Adder"
             android:label="Adder" >
             <intent-filter>
                 <action android:name="com.ruzulive.androidapp.MAINACT" />
