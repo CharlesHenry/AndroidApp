@@ -15,6 +15,7 @@ public class OpenedClass extends Activity implements OnClickListener,
 	TextView tvQuestion, tvTest;
 	Button returnData;
 	RadioGroup selectionList;
+	String gotBread;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,16 @@ public class OpenedClass extends Activity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.send);
 		setUpReferences();
+		Bundle gotBasket = getIntent().getExtras(); //get extras when class is opened with extras
+		gotBread = gotBasket.getString("keyBread");	//put extras into a string var
+		tvQuestion.setText(gotBread);
 	}
 
 	public void setUpReferences(){
 		tvQuestion = (TextView) findViewById (R.id.tvQuestion);
 		tvTest = (TextView) findViewById (R.id.tvTest);
 		returnData = (Button) findViewById (R.id.bReturn);
+		selectionList = (RadioGroup) findViewById(R.id.rgAnswers);
 		selectionList.setOnCheckedChangeListener(this); //call this method rather than the usual onClick for RadioGroup
 	}
 

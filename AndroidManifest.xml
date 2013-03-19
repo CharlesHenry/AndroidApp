@@ -58,6 +58,10 @@
             android:name="com.ruzulive.androidapp.Data"
             android:label="Data" >
         </activity>
+        <activity
+            android:name="com.ruzulive.androidapp.OpenedClass"
+            android:label="Selection" >
+        </activity>
     </application>
 
 </manifest>

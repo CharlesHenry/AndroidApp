@@ -28,8 +28,8 @@ public class Menu extends ListActivity{
 		//Starting an activity
 		try{
 			Class mainAct = Class.forName("com.ruzulive.androidapp."+ myString);
-			Intent mainActIntent = new Intent(Menu.this, mainAct);
-			startActivity(mainActIntent);
+			Intent mainActIntent = new Intent(Menu.this, mainAct); //setup intent to open new window(class)
+			startActivity(mainActIntent);						   //open new window(class)
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
