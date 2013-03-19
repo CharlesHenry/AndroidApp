@@ -54,6 +54,10 @@
             android:label="Camera"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.ruzulive.androidapp.Data"
+            android:label="Data" >
+        </activity>
     </application>
 
 </manifest>
